@@ -1,0 +1,65 @@
+
+Let us first check the pure strategies Nash equilibrium. To do so, we follow for all entries of the tables the following heuristic :
+\begin{itemize}
+    \item for each player, check if another strategy (all the others current strategies being left unchanged) can make his expected payoff increase.
+    \item if not, we are on a pure strategies Nash equilibrium.
+\end{itemize}
+So, the following pure strategies are Nash equilibrium :
+\begin{itemize}
+    \item {$(x_1, y_2, x_3) $ \\
+    Indeed, $u_1(y_1, y_2, x_3) = 0 < u_1(x_1, y_2, x_3) = 6 $,
+    \\ $u_2(x_1, y_2, x_3) = 0 < u_2(x_1, x_2, x_3)= 0 $, \\
+    and $u_3(x_1, y_2, y_3) = 0 < u_3(x_1, y_2, x_3) = 4 $}
+    \item {$(y_1, x_2, x_3) $ \\
+    Indeed, $u_1(y_1, x_2, x_3) = 5 > u_1(x_1, x_2, x_3) = 0 $,
+    \\ $u_2(y_1, x_2, x_3) = 4 > u_2(y_1, y_2, x_3)= 0 $, \\
+    and $u_3(y_1, x_2, y_3) = 0 < u_3(y_1, x_2, x_3) = 6 $}
+    \item {$(x_1, x_2, y_3) $ \\
+    Indeed, $u_1(x_1, x_2, y_3) = 4 > u_1(y_1, x_2, y_3) = 0 $,
+    \\ $u_2(x_1, x_2, y_3) = 6 > u_2(x_1, y_2, y_3)= 0 $, \\
+    and $u_3(x_1, x_2, y_3) = 5 > u_3(x_1, x_2, x_3) = 0 $}
+    \item {$(y_1, y_2, y_3) $ \\
+    Indeed, $u_1(y_1, y_2, y_3) = 0 = u_1(x_1, y_2, y_3) = 0 $,
+    \\ $u_2(y_1, y_2, y_3) = 0 = u_2(y_1, x_2, y_3)= 0 $, \\
+    and $u_3(y_1, y_2, y_3) = 0 = u_3(y_1, y_2, x_3) = 0 $}
+\end{itemize}
+
+Now let's check the strategies that are mixes of pure strategies for at least one player and mixed strategies for at least one other player. (We consider that a,b and c $\in ]0,1[$.)
+\begin{itemize}
+    \item {The strategies ($ax_1 + (1-a)y_1, x_2 \text{ or } y_2, x_3 
+    \text{ or } y_3$) are not Nash equilibrium because that strategy is 
+    dominated by some pure strategies for at least one of the three players.\\
+    This is exactly the same for the strategies :\\
+    ($x_1 \text{ or } y_1, bx_2 + (1-b)y_2, x_3 \text{ or } y_3 $) ;\\
+    ($ x_1 \text{ or } y_1, x_2 \text{ or } y_2, c x_3 + (1-c) y_3$) ;\\
+    ($y_1,  bx_2 + (1-b)y_2, c x_3 + (1-c)y_3 $) ; \\
+    ($ax_1 + (1-a)y_1, y_2, c x_3 + (1-c) y_3 $) ; \\
+    ($ax_1 + (1-a)y_1, bx_2 + (1-b)y_2, y_3$) ; \\    
+    }
+    \item {So for the kind of strategies of interest now, it stays \\
+    ($x_1, bx_2 + (1-b)y_2, c x_3 + (1-c) y_3$), ($ax_1 + (1-a)y_1, x_2, c x_3 + (1-c) y_3 $), and ($ax_1 + (1-a)y_1, bx_2 + (1-b)y_2, x_3 $).\\
+    But that seems a lot of calculation so, let us check for symmetry. We have the three following points with positive utility for all the players : ($x_1, y_2, x_3$), 
+    ($y_1, x_2, x_3$) and ($x_1, x_2, y_3$). And there are symmetry on that points : for any player i, $y_i$ gives a payoff of 5 and $x_i$ gives either 
+    a payoff of 4 or of 5. So, we can expect to obtain the same kind of equations for the three considered strategies.\\
+    Let us begin by looking for a Nash equilibrium of the type :
+    ($x_1, bx_2 + (1-b)y_2, c x_3 + (1-c) y_3$).\\
+    Since all the players are rational and they all know that the others are rational too, if player 1 plays $x_1$, the player 2 will play $x_2$ since that strategy maximizes both his payoff and the payoff of player 3. By the same reasoning, player 3 will play $y_3$.\\
+    For ($ax_1 + (1-a)y_1, x_2, c x_3 + (1-c) y_3 $), and ($ax_1 + (1-a)y_1, bx_2 + (1-b)y_2, x_3 $), we obtain the same equation with other set of letters and thus the same conclusion : there is no Nash equilibrium with pure strategies for at least one player and mixed strategies for at least one other player.
+    }
+\end{itemize}
+
+Only one strategy remains to be verified : is there a Nash equilibrium ($ ax_1 + (1-a)y_1, b x_2 + (1-b)y_2, c x_3 + (1-c)y_3 $) 
+with a,b and c $\in ]0,1[$.\\
+For player 1, we must have (if he plays a mixed strategy, he wants the same expected payoff for each possible realization of his mixed strategy) :
+$$ 6(1-b)c + 4b(1-c) = 5bc $$
+For player 2 : 
+$$ 4(1-a)c + 6a(1-c) = 5ac $$
+For player 3 :
+$$ 6(1-a)b + 4a(1-b) = 5ab $$
+This system seems hard to solve but by keeping in mind the symmetry of this system, we can try the solution $ a = b = c $. 
+We obtain then for example the equation $ 10a = 15 a^2 $ and with our restriction for a, the only possible solution is $\frac{2}{3} $.
+We can check that this solution work indeed and so, our fifth and last Nash equilibrium is :
+$$ (\frac{2}{3} x_1 + \frac{1}{3} y_1, \frac{2}{3} x_2 + \frac{1}{3} y_2, \frac{2}{3} x_3 + \frac{1}{3} y_3) $$
+
+
+
